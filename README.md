@@ -1,203 +1,171 @@
+# Smart Gate Keeper AI
 
-# WIKI
+Smart Gate Keeper AI is an AI-powered vehicle monitoring and gate assistance system designed for smart entrances, parking areas, campus gates, subdivisions, private facilities, and controlled-access environments.
 
-
-
-# System Tech Stack
-
-This page documents the technology stack used in the **Smart Gate Keeper AI** system.
-
-Smart Gate Keeper AI is composed of a web dashboard, Node.js backend, Python AI detection backend, mobile camera app, and IoT gate light hardware controllers.
+The system uses artificial intelligence to detect vehicles, recognize license plates, monitor gate activity, display real-time dashboard updates, and control gate light indicators through IoT-based LoRa communication.
 
 ---
 
-## Frontend Web Dashboard
+## Project Preview
 
-| Technology | Category |
+### System Banner
+
+> Replace this image with your final promotional banner.
+
+![Smart Gate Keeper AI Banner](./docs/images/banner-placeholder.png)
+
+---
+
+## Demo Video
+
+> Replace this with your actual demo video link.
+
+[![Watch the Demo](./docs/images/video-thumbnail-placeholder.png)](https://your-demo-video-link-here.com)
+
+---
+
+## Repository Links
+
+| Project Repository | Description |
 |---|---|
-| HTML | Markup |
-| CSS | Styling |
-| JavaScript | Programming Language |
-| Chart.js | Data Visualization |
-| Material Icons | Icon Library |
-| WebSockets | Realtime Communication |
+| [vehicle-detector](https://github.com/smartgatekeeperai/vehicle-detector) | Python FastAPI AI backend for vehicle detection, plate detection, ALPR, and OCR |
+| [web](https://github.com/smartgatekeeperai/web) | Node.js Express web backend and dashboard server |
+| [camera-app](https://github.com/smartgatekeeperai/camera-app) | Ionic Angular mobile camera application |
+| [gatelight_server](https://github.com/smartgatekeeperai/gatelight_server) | Raspberry Pi Pico MicroPython LoRa sender |
+| [gatelight_controller](https://github.com/smartgatekeeperai/gatelight_controller) | Arduino Nano LoRa receiver and gate light controller |
 
 ---
 
-## Web Backend / Main Server
+## Table of Contents
 
-| Technology | Category |
-|---|---|
-| Node.js | Runtime |
-| Express | Backend Framework |
-| JavaScript | Programming Language |
-| PostgreSQL | Database |
-| Multer | File Upload Middleware |
-| bcryptjs | Password Hashing |
-| CORS | API Middleware |
-| dotenv | Environment Configuration |
-| Node Cache | In-Memory Cache |
-| WebSockets | Realtime Communication |
+- [Overview](#overview)
+- [Problem Statement](#problem-statement)
+- [Solution](#solution)
+- [Key Features](#key-features)
+- [System Architecture](#system-architecture)
+- [System Modules](#system-modules)
+- [Technology Stack](#technology-stack)
+- [Repository Links](#repository-links)
+- [Screenshots](#screenshots)
+- [Hardware Preview](#hardware-preview)
+- [Demo Video](#demo-video)
+- [Use Cases](#use-cases)
+- [For Clients](#for-clients)
+- [For Developers](#for-developers)
+- [For Future Researchers](#for-future-researchers)
+- [Deployment Overview](#deployment-overview)
+- [Future Improvements](#future-improvements)
+
+---
+
+# Overview
+
+Smart Gate Keeper AI is a smart monitoring system that combines:
+
+- AI vehicle detection
+- License plate recognition
+- Real-time web dashboard
+- Mobile camera support
+- Database logging
+- IoT gate light control
+- LoRa-based wireless hardware communication
+
+The goal of the system is to improve gate monitoring, reduce manual checking, provide faster vehicle record lookup, and support smart access environments.
 
 ---
 
-## AI Vehicle / Plate Detection Backend
+# Problem Statement
 
-| Technology | Category |
-|---|---|
-| Python | Programming Language |
-| FastAPI | Backend Framework |
-| Uvicorn | ASGI Server |
-| Pydantic | Data Validation |
-| Pillow | Image Processing |
-| NumPy | Numerical Processing |
-| Ultralytics YOLO | Object Detection |
-| PyTorch | Deep Learning Framework |
-| TorchVision | Computer Vision Library |
-| fast-alpr | License Plate Recognition |
-| ONNX Runtime | AI Inference Runtime |
-| PaddleOCR | Optical Character Recognition |
-| PaddlePaddle | Deep Learning Framework |
-| PostgreSQL | Database |
-| PySerial | Serial Communication |
-| WebSockets | Realtime Communication |
+Traditional gate monitoring is often manual, slow, and prone to human error.
+
+Common issues include:
+
+- Manual vehicle logging
+- Missed plate number records
+- No real-time activity dashboard
+- No centralized vehicle history
+- No automated gate light indication
+- Limited monitoring for security staff
+- No easy way to review previous vehicle entries
+
+Smart Gate Keeper AI addresses these problems using AI, web technology, mobile camera input, and IoT hardware integration.
 
 ---
+
+# Solution
+
+Smart Gate Keeper AI provides an integrated system where cameras capture vehicle images, the AI backend detects vehicles and plate numbers, the web dashboard displays real-time logs, and the IoT hardware controls gate light indicators.
+
+The system is designed to support both software-based monitoring and physical gate assistance.
+
+---
+
+# Key Features
+
+## AI Vehicle Detection
+
+Detects vehicles from camera images or uploaded frames using YOLO-based object detection.
+
+## License Plate Recognition
+
+Detects and reads vehicle plate numbers using ALPR and OCR technologies.
+
+## Real-Time Dashboard
+
+Displays vehicle activity, logs, summaries, and updates using WebSockets.
+
+## Vehicle Logs
+
+Stores detected vehicles, plate numbers, timestamps, and related activity records.
 
 ## Mobile Camera App
 
-| Technology | Category |
-|---|---|
-| Ionic Framework | Mobile App Framework |
-| Angular | Frontend Framework |
-| TypeScript | Programming Language |
-| Capacitor | Native Runtime |
-| Capacitor Android | Android Platform |
-| SQLite | Local Database |
-| RxJS | Reactive Programming |
-| Day.js | Date and Time Library |
+Allows camera-based image capture through an Ionic Angular mobile application.
+
+## Gate Light Control
+
+Controls red, green, and off gate light states using LoRa-connected hardware.
+
+## Wireless IoT Communication
+
+Uses LoRa modules for communication between the sender device and gate light receiver.
+
+## Database Integration
+
+Uses PostgreSQL for storing vehicle records, users, logs, and system data.
 
 ---
 
-## Gate Light Server / Sender Device
+# System Architecture
 
-| Technology | Category |
-|---|---|
-| Raspberry Pi Pico | Microcontroller |
-| MicroPython | Programming Language |
-| SX1278 LoRa Module | Wireless Module |
-| SPI | Communication Interface |
-| LoRa | Wireless Communication |
+> Replace this diagram with your final architecture diagram.
 
----
+![System Architecture](./docs/images/system-architecture-placeholder.png)
 
-## Gate Light Controller / Receiver Device
+## High-Level Flow
 
-| Technology | Category |
-|---|---|
-| Arduino Nano | Microcontroller |
-| Arduino C++ | Programming Language |
-| LoRa Library | Arduino Library |
-| SPI | Communication Interface |
-| SX1278 LoRa Module | Wireless Module |
-| GPIO | Hardware Interface |
+```txt
+Camera / Mobile App
+        |
+        v
+AI Vehicle Detector Backend
+        |
+        v
+Node.js Web Backend
+        |
+        v
+PostgreSQL Database
+        |
+        v
+Web Dashboard
 
----
-
-## Database
-
-| Technology | Category |
-|---|---|
-| PostgreSQL | Primary Database |
-
----
-
-## AI / Computer Vision
-
-| Technology | Category |
-|---|---|
-| YOLO | Object Detection |
-| Automatic License Plate Recognition | Plate Detection |
-| Optical Character Recognition | Text Recognition |
-| Object Detection | Computer Vision |
-| Image Processing | Computer Vision |
-| Deep Learning Inference | AI Processing |
-| ONNX | Model Format / Runtime Support |
-
----
-
-## Realtime Communication
-
-| Technology | Category |
-|---|---|
-| WebSockets | Realtime Communication |
-| HTTP | API Communication |
-
----
-
-## Hardware / IoT
-
-| Technology | Category |
-|---|---|
-| Raspberry Pi Pico | Microcontroller |
-| Arduino Nano | Microcontroller |
-| SX1278 LoRa Module | Wireless Module |
-| Camera Device | Image Capture Hardware |
-| Gate Light Controller | Output Control Hardware |
-| Serial Communication | Device Communication |
-| SPI | Device Communication |
-
----
-
-## Deployment & Infrastructure
-
-| Technology | Category |
-|---|---|
-| Vercel | Deployment Platform |
-| GitHub | Source Code Hosting |
-| Node.js Runtime | Backend Runtime |
-| Python Runtime | AI Backend Runtime |
-| Android Platform | Mobile Platform |
-
----
-
-## Development Tools
-
-| Technology | Category |
-|---|---|
-| Git | Version Control |
-| npm | Node.js Package Manager |
-| pip | Python Package Manager |
-| Python venv | Python Virtual Environment |
-| Ionic CLI | Ionic Development Tool |
-| Capacitor CLI | Capacitor Development Tool |
-| Arduino IDE / Arduino Toolchain | Firmware Development |
-| MicroPython Toolchain | MicroPython Development |
-
----
-
-## Repository Mapping
-
-| Repository | Main Stack |
-|---|---|
-| `vehicle-detector` | Python, FastAPI, YOLO, OCR, ALPR, PyTorch, ONNX Runtime |
-| `web` | Node.js, Express, JavaScript, PostgreSQL, WebSockets |
-| `camera-app` | Ionic, Angular, TypeScript, Capacitor, Android |
-| `gatelight_server` | Raspberry Pi Pico, MicroPython, LoRa, SPI |
-| `gatelight_controller` | Arduino Nano, Arduino C++, LoRa, SPI, GPIO |
-
----
-
-## Overall System Stack Summary
-
-| Layer | Technologies |
-|---|---|
-| Web Dashboard | HTML, CSS, JavaScript, Chart.js, Material Icons, WebSockets |
-| Web Backend | Node.js, Express, PostgreSQL, Multer, bcryptjs, CORS, dotenv, Node Cache |
-| AI Backend | Python, FastAPI, Uvicorn, YOLO, PyTorch, ONNX Runtime, PaddleOCR, fast-alpr |
-| Mobile App | Ionic, Angular, TypeScript, Capacitor, SQLite |
-| IoT Sender | Raspberry Pi Pico, MicroPython, SX1278 LoRa, SPI |
-| IoT Receiver | Arduino Nano, Arduino C++, LoRa Library, GPIO |
-| Database | PostgreSQL |
-| Realtime | WebSockets, HTTP |
-| Deployment | Vercel, GitHub, Android Platform |
+AI / Web Backend
+        |
+        v
+Serial / LoRa Sender
+        |
+        v
+Gate Light Controller
+        |
+        v
+Red / Green Gate Light
