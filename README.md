@@ -19,8 +19,7 @@ The system uses artificial intelligence to detect vehicles, recognize license pl
 ## Demo Video
 
 
-
-[![Watch the Demo]]([https://your-demo-video-link-here.com](https://www.youtube.com/watch?v=ziGTrcfqaLw))
+[![Watch the Demo](https://img.youtube.com/vi/ziGTrcfqaLw/maxresdefault.jpg)](https://www.youtube.com/watch?v=ziGTrcfqaLw)
 
 ---
 
