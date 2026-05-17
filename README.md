@@ -12,7 +12,7 @@ The system uses artificial intelligence to detect vehicles, recognize license pl
 
 > Replace this image with your final promotional banner.
 
-![Smart Gate Keeper AI Banner](./docs/images/banner-placeholder.png)
+![Smart Gate Keeper AI Banner](https://blog.avotrix.com/wp-content/uploads/2020/11/ezgif.com-gif-maker.jpg)
 
 ---
 
@@ -20,7 +20,7 @@ The system uses artificial intelligence to detect vehicles, recognize license pl
 
 > Replace this with your actual demo video link.
 
-[![Watch the Demo](./docs/images/video-thumbnail-placeholder.png)](https://your-demo-video-link-here.com)
+[![Watch the Demo](https://magnet.com.my/wp-content/uploads/2024/12/No-more-hassle-of-card5.webp)]([https://your-demo-video-link-here.com](https://www.youtube.com/watch?v=ziGTrcfqaLw))
 
 ---
 
